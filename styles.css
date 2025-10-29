@@ -1,0 +1,219 @@
+/* --- Paleta de Colores HSL y Variables Globales --- */
+:root {
+    /* Nueva paleta basada en Rojos/Tierra y Blanco */
+    --color-principal-rojo: #a34c44; /* Rojo Ladrillo (como color primario/botones) */
+    --color-principal-claro: #cf7e77; /* Rojo Suave (para acentos/hover) */
+    --color-principal-oscuro: #783935; /* Rojo Oscuro (para navbar/footer) */
+
+    /* COLORES DE FONDO Y TEXTO */
+    --color-fondo-principal: #f8f9fa; /* Gris muy claro, casi blanco */
+    --color-fondo-tarjeta: #ffffff; /* Blanco puro para tarjetas */
+    --color-texto-oscuro: #343a40; /* Gris oscuro para texto principal */
+    --color-texto-claro: #ffffff; /* Blanco para texto sobre fondos oscuros */
+
+    /* COLORES DE ACENTO/COMPLEMENTARIOS */
+    --color-acento-exito: #28a745; /* Verde estándar para éxito/precio */
+    --color-acento-warn: #ffc107;  /* Amarillo estándar para promo/alerta */
+    --color-acento-peligro: #dc3545; /* Rojo estándar para botones de peligro */
+
+    /* Tipografía */
+    --fuente-principal: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* --- Estilos Base y Reseteo --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* Fondo claro */
+    background-color: var(--color-fondo-principal); 
+    color: var(--color-texto-oscuro);
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+}
+
+/* --- Estilos de Tipografía y Componentes --- */
+h1 {
+    color: var(--color-principal-rojo);
+    border-bottom: 4px solid currentColor;
+}
+
+h2, h3, h4, h5, h6 {
+    color: var(--color-texto-oscuro); 
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: var(--color-texto-oscuro);
+}
+
+li {
+    color: var(--color-texto-oscuro); 
+}
+
+/* Enlaces */
+a {
+    color: var(--color-principal-rojo);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-principal-claro); 
+}
+
+/* NAVBAR */
+.navbar {
+    /* Fondo más oscuro */
+    background-color: var(--color-principal-oscuro) !important; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav-link {
+    color: var(--color-texto-claro) !important;
+}
+
+.navbar-brand span {
+    color: var(--color-texto-claro);
+}
+
+/* BOTONES (Reemplazando estilos de Bootstrap) */
+.btn-dark {
+    /* Usando el color principal rojo */
+    background-color: var(--color-principal-rojo); 
+    border-color: var(--color-principal-rojo);
+    color: var(--color-texto-claro);
+}
+
+.btn-dark:hover {
+    background-color: var(--color-principal-oscuro); 
+    border-color: var(--color-principal-oscuro);
+}
+
+/* CLASE AÑADIDA PARA el botón del carrito en navbar */
+.navbar .btn-outline-light {
+    color: var(--color-texto-claro);
+    border-color: var(--color-principal-claro);
+}
+
+.navbar .btn-outline-light:hover {
+    background-color: var(--color-principal-rojo);
+    border-color: var(--color-principal-rojo);
+    color: var(--color-texto-claro);
+}
+
+/* CARDS y FONDOS */
+.card {
+    /* Fondo claro para contraste */
+    background-color: var(--color-fondo-tarjeta); 
+    border: 1px solid #dee2e6;
+}
+
+/* CLASES DE UTILIDAD DE BOOTSTRAP REEMPLAZADAS */
+.text-success {
+    color: var(--color-acento-exito) !important;
+}
+
+/* TABLA */
+.table {
+    /* Colores claros para mejor lectura */
+    --bs-table-bg: var(--color-fondo-tarjeta); 
+    --bs-table-color: var(--color-texto-oscuro);
+    --bs-table-striped-bg: #e9ecef; 
+}
+
+.table-dark {
+    --bs-table-bg: var(--color-principal-oscuro);
+    --bs-table-color: var(--color-texto-claro);
+}
+
+td {
+    color: var(--color-texto-oscuro);
+}
+
+th {
+    color: var(--color-texto-claro);
+}
+
+/* BANNER */
+#banner.bg-dark {
+    background-color: var(--color-principal-rojo) !important;
+}
+
+#banner.bg-warning {
+    background-color: var(--color-acento-warn) !important;
+    color: #333 !important; 
+}
+
+/* --- FOOTER Y REDES SOCIALES --- */
+footer {
+    /* Usando el color principal oscuro */
+    background-color: var(--color-principal-oscuro) !important;
+    padding: 20px 0;
+    margin-top: 50px !important;
+    color: var(--color-texto-claro);
+}
+
+footer p {
+    color: var(--color-texto-claro);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+}
+
+.social-links a {
+    color: var(--color-texto-claro);
+    transition: color 0.2s ease;
+    font-size: 1.5rem; 
+}
+
+.social-links a:hover {
+    color: var(--color-principal-claro); /* Rojo suave al pasar el mouse */
+}
+
+
+/* --- BOTÓN FLOTANTE WHATSAPP (Mantiene el verde por convención) --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px; 
+    right: 40px;      
+    background-color: #25d366;  /* Verde de WhatsApp */
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px; 
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    z-index: 1055;    
+    text-decoration: none;
+    transition: transform .3s ease, background-color .2s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive para el botón */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+}
